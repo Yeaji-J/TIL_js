@@ -1,0 +1,33 @@
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+#slide_container {
+  background: aqua;
+  width: 800px;
+  overflow: hidden;
+}
+#slide_container .slide_wrap {
+  background: salmon;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 1600px;
+  transform: translateX(-800px);
+}
+#slide_container .slide_wrap .slide {
+  width: 800px;
+  height: 350px;
+}
+#slide_container .slide_wrap .slide1 {
+  border: 1px solid;
+  color: blue;
+}
+#slide_container .slide_wrap .slide2 {
+  border: 1px solid;
+  color: lime;
+}
+
+/*# sourceMappingURL=basic3.css.map */

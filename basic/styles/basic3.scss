@@ -1,0 +1,24 @@
+@mixin slide_w_h_pc {
+    width:800px; height:350px;
+}
+@mixin flex-row {
+    display:flex; flex-flow:row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+body {width:100%; height:100vh;}
+#slide_container {
+    background: aqua;
+    width:800px;
+    overflow:hidden;
+    .slide_wrap {
+        background:salmon;
+        @include flex-row; width:calc(800px *2);
+        transform:translateX(-800px);
+        .slide {
+            @include slide_w_h_pc;
+        }
+        .slide1 {border:1px solid; color:blue;}
+        .slide2 {border:1px solid; color:lime;}
+    }
+}
