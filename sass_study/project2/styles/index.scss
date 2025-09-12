@@ -1,0 +1,47 @@
+//1360x750
+@use './common.scss' as *;
+
+#slide_wrap {
+    width:1360px; height:750px;
+    background-color:#ffffd4;
+    margin:0 auto;
+    background-image:url(../images/home_chun_yellow.png);
+    @include bg_img; background-size:800px auto; background-position-x:500px;
+    border-radius:50px;
+    overflow:hidden;
+    .slide_container {
+        .slide {
+            padding:100px 80px 150px;
+        }
+            /* @include flex-column; */
+        .slide1 {
+                .title_contents {
+                    h2 {font-size:$font-title;}
+                    p {font-size:$font-sub; font-weight:$weight-bold;}
+                }
+                .bnr_link {
+                    .edu {
+                        a {background:$btn-dark; color:$btn-light;
+                        @include slide_btn;
+                        }
+                    }
+                    .news {
+                        a {border:1px solid $btn-dark; @include slide_btn;
+                            img {}
+                        }
+                    }
+                }
+        }
+        }
+        .slide_fixed {
+            .slide_bar {
+                .current_pg {}
+                .bar {}
+                .total_pg {}
+            }
+            .btn {
+                #pre_btn {}
+                #next_btn {}
+            }
+        }
+    }
