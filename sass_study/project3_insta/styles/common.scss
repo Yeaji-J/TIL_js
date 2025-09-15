@@ -1,0 +1,9 @@
+$font-size-l:1rem;
+$font-size-m:0.9rem;
+$font-size-s:0.875rem;
+@mixin flexrow {display:flex; flex-flow:row nowrap;
+    justify-content:space-between;
+    align-items:center;}
+@mixin flexcol {display:flex; flex-flow:column nowrap;
+    align-items:left;}
+@mixin icons {width:24px; height:24px;}

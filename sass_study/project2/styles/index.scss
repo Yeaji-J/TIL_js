@@ -12,26 +12,17 @@
     .slide_container {
         .slide {
             padding:100px 80px 150px;
-        }
-            /* @include flex-column; */
-        .slide1 {
-                .title_contents {
-                    h2 {font-size:$font-title;}
-                    p {font-size:$font-sub; font-weight:$weight-bold;}
-                }
-                .bnr_link {
-                    .edu {
-                        a {background:$btn-dark; color:$btn-light;
-                        @include slide_btn;
-                        }
-                    }
-                    .news {
-                        a {border:1px solid $btn-dark; @include slide_btn;
-                            img {}
-                        }
-                    }
-                }
-        }
+            .title_contents {background:aqua;
+                .title {font-size:$font-title; font-weight:$weight-bold; margin:0;}
+                .sub_title {font-size:$font-sub; font-weight:$weight-semi;margin-bottom:250px;}
+            }
+            .bnr_link {
+                .edu {background:$btn-dark; color:#fff; font-size:$font-btn;
+                    @include slide_btn;}
+                .news {color:#000; border:1px solid $btn-dark; font-size:$font-btn;
+                    @include slide_btn;}
+                    img {transform:translateY(5px); padding:0 5px;}
+            }
         }
         .slide_fixed {
             .slide_bar {
@@ -45,3 +36,4 @@
             }
         }
     }
+}

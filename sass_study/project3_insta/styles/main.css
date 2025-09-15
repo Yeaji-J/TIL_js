@@ -1,0 +1,74 @@
+body {
+  background: pink;
+  margin-top: 100px;
+}
+body #insta_wrap {
+  background: #fff;
+  width: 420px;
+  height: 640px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+body #insta_wrap .profile {
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+body #insta_wrap .profile .user_profile {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+body #insta_wrap .profile .user_profile span {
+  font-size: 1rem;
+}
+body #insta_wrap .profile .more {
+  font-size: 1rem;
+}
+body .photo {
+  background-image: url(https://plus.unsplash.com/premium_photo-1719843013722-c2f4d69db940?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  height: 430px;
+  overflow: hidden;
+  background-position: center;
+}
+body .contents {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+}
+body .contents .scrap {
+  font-size: 1rem;
+}
+body .details {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: left;
+  gap: 5px;
+  padding: 0 15px;
+  font-size: 1rem;
+}
+body .details p:nth-child(3) {
+  color: #aaa;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+body .details p:nth-child(4) {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+}
+
+/*# sourceMappingURL=main.css.map */

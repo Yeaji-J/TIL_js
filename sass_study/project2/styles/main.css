@@ -15,30 +15,40 @@
 #slide_wrap .slide_container .slide {
   padding: 100px 80px 150px;
 }
-#slide_wrap .slide_container {
-  /* @include flex-column; */
+#slide_wrap .slide_container .slide .title_contents {
+  background: aqua;
 }
-#slide_wrap .slide_container .slide1 .title_contents h2 {
+#slide_wrap .slide_container .slide .title_contents .title {
   font-size: 3rem;
-}
-#slide_wrap .slide_container .slide1 .title_contents p {
-  font-size: 1.5rem;
   font-weight: 700;
+  margin: 0;
 }
-#slide_wrap .slide_container .slide1 .bnr_link .edu a {
+#slide_wrap .slide_container .slide .title_contents .sub_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 250px;
+}
+#slide_wrap .slide_container .slide .bnr_link .edu {
   background: #000;
   color: #fff;
-  padding: 6px 24px;
+  font-size: 1.125rem;
+  padding: 10px 30px;
   border-radius: 50px;
-  width: 238px;
-  height: 54px;
+  font-size: 700;
+  /* width:238px; height:70px; */
 }
-#slide_wrap .slide_container .slide1 .bnr_link .news a {
+#slide_wrap .slide_container .slide .bnr_link .news {
+  color: #000;
   border: 1px solid #000;
-  padding: 6px 24px;
+  font-size: 1.125rem;
+  padding: 10px 30px;
   border-radius: 50px;
-  width: 238px;
-  height: 54px;
+  font-size: 700;
+  /* width:238px; height:70px; */
+}
+#slide_wrap .slide_container .slide .bnr_link img {
+  transform: translateY(5px);
+  padding: 0 5px;
 }
 
 /*# sourceMappingURL=main.css.map */

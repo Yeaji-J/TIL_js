@@ -6,6 +6,7 @@ $weight-semi:600;
 $weight-medium:500;
 $font-title:3rem;
 $font-sub:1.5rem;
+$font-btn:1.125rem;
 
 @mixin flex-column {
     display:flex; flex-flow:column nowrap;
@@ -23,7 +24,8 @@ $font-sub:1.5rem;
     background-position:center;
 }
 @mixin slide_btn {
-    padding:6px 24px;
+    padding:10px 30px;
     border-radius:50px;
-    width:238px; height:54px;
+    font-size:$weight-bold;
+    /* width:238px; height:70px; */
 }

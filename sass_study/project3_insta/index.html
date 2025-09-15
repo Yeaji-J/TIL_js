@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        #insta_wrap {position:relative;}
+        #popup {position:absolute;top:50%; left:50%; transform:translate(-50%, -70%) scale(0.3);
+        opacity:0;}
+        #popup svg {fill:#fff; stroke:#f5f5f5; stroke-width:10px;
+        overflow:visible;
+        }
+    </style>
+</head>
+<body>
+    <div id="insta_wrap">
+        <!-- 팝업 -->
+        <div id="popup">
+            <svg width="174" height="169" viewBox="0 0 174 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M106.167 168.615V148.969C120.542 144.816 132.122 136.83 140.906 125.01C149.691 113.191 154.083 99.7743 154.083 84.7604C154.083 69.7465 149.691 56.3299 140.906 44.5104C132.122 32.691 120.542 24.7049 106.167 20.5521V0.90625C125.972 5.37847 142.104 15.401 154.563 30.974C167.021 46.5469 173.25 64.4757 173.25 84.7604C173.25 105.045 167.021 122.974 154.563 138.547C142.104 154.12 125.972 164.142 106.167 168.615ZM0.75 113.75V56.25H39.0833L87 8.33333V161.667L39.0833 113.75H0.75ZM106.167 123.333V46.1875C113.674 49.7014 119.543 54.9722 123.776 62C128.009 69.0278 130.125 76.6944 130.125 85C130.125 93.1458 128.009 100.693 123.776 107.641C119.543 114.589 113.674 119.819 106.167 123.333Z"/>
+                </svg>
+                
+        </div>
+        <!-- 고정 -->
+        <div class="profile">
+            <a href="#" class="user_profile">
+                <img src="./images/profile.png" alt="">
+                <span>username</span>
+            </a>
+            <a href="#" class="more">더보기</a>
+        </div>
+        <div class="photo"></div>
+        <div class="contents">
+            <div class="icons">
+                <a href="#"><img src="./images/like_off.png" alt="좋아요"></a>
+                <a href="#"><img src="./images/comment_off.png" alt="댓글"></a>
+                <a href="#"><img src="./images/paper_off.png" alt="공유"></a>
+            </div>
+            <a href="#" class="scrap">스크랩</a>
+        </div>
+        <div class="details">
+            <p>100 likes</p>
+            <p>username</p>
+            <p>view all 20 comments</p>
+            <p>3 Days Ago</p>
+        </div>
+    </div>
+</body>
+</html>
