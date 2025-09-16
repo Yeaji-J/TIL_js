@@ -141,7 +141,7 @@ console.log(userId, userPw, loginBtn, loginErrorMsg)
 // null 이라고 뜨지 않도록 변수 확인 꼼꼼히 하기
 
 // 회원정보 저장 DB (database)
-const userDB = [{
+const userDb = [{
     name:'봄',
     age:30,
     pst:'관리자',
@@ -154,6 +154,8 @@ const userDB = [{
     id:'summer',
     pw:'summer1234'
 }]
+console.log(userDb[0].id)
+
 // 로그인 클릭 이벤트
 // 2. 조건문 1-4
 loginBtn.addEventListener('click', function(){
@@ -163,9 +165,20 @@ loginBtn.addEventListener('click', function(){
     } else if(userPw.value == '') { // 비번 미입력 기준 에러 메세지 출력
         loginErrorMsg.textContent = '비밀번호를 입력하세요'
         //if의 조건이 거짓이고 else if 조건이 참일 때 실행
-    } else if(){ //입력한 id,pw이 관리자의 저장된 id,pw 동일 시 index로 이동
-        location.href='.//index.html';
-    }else {
-        //비번 상관없이 아이디가 입력됐을 때 (if 조건의 거짓)
+    } else if(userId.value == userDb[0].id && userPw.value == userDb[0].pw){
+        //입력한 id,,pw가 관리자의 저장된 id,pw 동일 시 index로 이동
+        /* location.href='../index.html'; */
+        //isLogin = true;
+        //console.log('로그인 성공', isLogin)
+        //★로컬 환경에서 확인 가능한 브라우저 데이터 저장법
+        /* let isLogin2 = 'true';랑 아래랑 같은 의미인데 아래 코드는 전역 변수로 설정하겠다는 의미 */
+        localStorage.setItem('isLogin2','true')
+        //localStorage.setItem('속성','값')
+        // localStorage. getItem('가져오는 속성')
+    } else { loginErrorMsg.textContent = '아이디 또는 비밀번호가 잘못되었습니다. 다시 한 번 확인해주세요.'
+        //모든 조건이 거짓일 때 (입력 id,pw 저장된 정보와 다를 때)
     }
 })
+
+//boolean_common.js 변수 확인
+console.log(isLogin);
