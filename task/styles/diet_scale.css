@@ -3,21 +3,77 @@ body {
     background-repeat: repeat;
     background-size:50%;
 }
-body #weightFrm {
+body #scale_frm {
     width:600px; height:700px;
     margin:0 auto; margin-top:100px;
-    padding: 50px;
+    padding: 40px;
     text-align:center;
-    background:#F2E966;
+    background: #b6bdba;/* #fedbe4; */
     border-radius:50px;
+
 }
-body #weightFrm .info_g .height_g {}
-body #weightFrm .info_g .height_g .height {}
-body #weightFrm .info_g .height_g #height_input {}
-body #weightFrm .info_g .weight_g {}
-body #weightFrm .info_g .weight_g .weight {}
-body #weightFrm .info_g .weight_g #weight_input {}
-body #weightFrm #check_btn {}
-body #weightFrm .result_msg {}
+body #scale_frm #title {
+    display:flex; flex-flow:row nowrap;
+    justify-content:center; align-items:center; gap:40px;
+
+}
+body #scale_frm #title img {display:none; width:100px; height:100px;}
+body #scale_frm #title .title_txt {
+    height:70px; padding:17px 80px;
+    background:#fff;
+    border-radius:20px;
+    font-size:2rem; font-weight:600;
+}
+body #scale_frm .info_g {
+    background:#fff;
+    width: 500px; height:490px;
+    border-radius:20px;
+    margin:0 auto;
+    margin-top: 50px; padding: 30px 0 50px;
+    position:relative;}
+body #scale_frm .info_g .height_g {
+
+}
+body #scale_frm .info_g .height_g .height,
+body #scale_frm .info_g .weight_g .weight {
+    font-size:1.4rem; font-weight:700;
+    
+}
+body #scale_frm .info_g .height_g #height_input,
+body #scale_frm .info_g .weight_g #weight_input {
+    border-bottom:3px solid #71a68c;
+    width:200px; height:40px;
+    margin:10px 10px;
+    padding:10px;
+}
+body #scale_frm .info_g .unit {
+    font-size:1.3rem; font-weight:700;
+}
+body #scale_frm .info_g .weight_g {}
+body #scale_frm .info_g #check_btn {
+    background:#71a68c; color:#fff;
+    padding:15px 30px;
+    margin: 30px 0 20px;
+    border-radius:20px;
+    font-size:1rem; font-weight:600;
+}
+body #scale_frm .result {
+    display:flex; flex-flow:row nowrap;
+    gap:20px;
+}
+body #scale_frm .result img {
+    width:40%; height:40%;
+    display:block;
+    position:absolute; bottom:20px; left:20px;
+    }
+body #scale_frm .result .result_msg {
+    width:300px; height:max-content; padding:90px;
+    background-image:url(https://i.pinimg.com/736x/7b/9a/f3/7b9af3e4e1f15960c126a418bf1fdfe1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    position:absolute; left:190px; bottom:40px;
+    line-height:120%;
+}
 
 /* 핑크 #F27EB4 파랑 #05F2F2 초록 #04BF55 노랑 #F2E966 주황 #F28705 */

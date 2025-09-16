@@ -6,23 +6,32 @@
     <title>다이어트 체중계</title>
     <link rel="stylesheet" href="./styles/diet_scale_reset.css">
     <link rel="stylesheet" href="./styles/diet_scale.css">
-    <script src="./scripts/diet_scale.js"></script>
+    <script src="./scripts/diet_scale.js" defer></script>
 </head>
 <body>
-    <form action="" method="post" id="weightFrm">
+    <form action="" method="post" id="scale_frm">
+        <div id="title">
+            <img src="./images/weight.jpg" alt="">
+            <p class="title_txt">scale</p>
+            <img src="./images/weight.jpg" alt="">
+        </div>
         <div class="info_g">
-            <p class="title">체중계</p>
             <div class="height_g">
-                <span class="height">신장</span>
-                <input input="text" name="height_input" id="height_input" placeholder="신장을 입력하세요">
+                <span class="height">신장 :</span>
+                <input input="text" name="height_input" id="height_input" placeholder="키를 입력하세요">
+                <span class="unit">cm</span>
             </div>
             <div class="weight_g">
-                <span class="weight">몸무게</span>
+                <span class="weight">체중 :</span>
                 <input input="text" name="weight_input" id="weight_input" placeholder="몸무게를 입력하세요">
+                <span class="unit">kg</span>
+            </div>
+            <button type="button" id="check_btn">적정체중 확인하기</button>
+            <div class="result">
+                <img src="./images/weight2.png" alt="">
+                <p class="result_msg">어제 야식 먹었니?</p>
             </div>
         </div>
-        <button type="button" id="check_btn">적정체중 확인하기</button>
-        <p class="result_msg"></p>
     </form>
 </body>
 </html>
