@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이어트 체중계</title>
+    <link rel="stylesheet" href="./styles/diet_scale_reset.css">
+    <link rel="stylesheet" href="./styles/diet_scale.css">
+    <script src="./scripts/diet_scale.js"></script>
+</head>
+<body>
+    <form action="" method="post" id="weightFrm">
+        <div class="info_g">
+            <p class="title">체중계</p>
+            <div class="height_g">
+                <span class="height">신장</span>
+                <input input="text" name="height_input" id="height_input" placeholder="신장을 입력하세요">
+            </div>
+            <div class="weight_g">
+                <span class="weight">몸무게</span>
+                <input input="text" name="weight_input" id="weight_input" placeholder="몸무게를 입력하세요">
+            </div>
+        </div>
+        <button type="button" id="check_btn">적정체중 확인하기</button>
+        <p class="result_msg"></p>
+    </form>
+</body>
+</html>
