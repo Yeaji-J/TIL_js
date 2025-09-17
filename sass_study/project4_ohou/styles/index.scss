@@ -1,0 +1,180 @@
+@use './common.scss' as *;
+
+#wrap header {
+    height:52px; padding:0 80px;
+    @include flex-row; align-items:center; gap:16px;
+    border:1px solid $color-gray-light-lv2;
+    border-left:0; border-right:0;
+    margin-bottom:24px;
+    a {font-size:$font-size-l; font-weight:$font-weight-bold;}
+    }
+#wrap main { @include flex-col; gap:26px;
+    @include content-w;
+    .path {
+        a {font-size:$font-size-s;}
+        img {width:6px; height:6px; transform:translateY(-2px);}
+    }
+    .container { @include flex-row;  
+        .overview_img { @include flex-row; gap:15px;
+            .img_col1 { 
+                @include flex-col; gap:10px;
+                justify-content: flex-start; align-items: center;
+                a { width:56px; height:56px;
+                    @include image;
+                    img {width:100%; height:100%;}
+                }
+            }
+            .img_col2 {width:559px; height:559px;
+                @include image;
+                img {width:100%; height:100%;}}
+        } /* -------------------------------------- 우측 정보 ------------------------------------ */
+        .contents {
+            width:100%;
+            @include flex-col; gap:25px;
+            align-items:left;
+            margin-left:24px;
+            .brand {font-size:$font-size-s;}
+            .product_info { @include flex-row; justify-content:space-between;
+                .product_name {font-size:$font-size-xl;}
+                .right_icon {@include flex-row; gap:10px; align-items:center;
+                    .scrap {@include flex-col; align-items: center;
+                        .bookmark {
+                            width:20px; height:20px;
+                            @include icon_svg;}
+                        span {font-size:$font-size-xs; color: $color-black;}
+                    }
+                    .share {
+                        .share_icon {
+                            width:24px; height:24px;
+                            @include icon_svg;}
+                    }
+                }
+            }
+            .review { @include flex-row; gap:10px;
+                .review_stars{@include flex-row;}
+                .review_txt {color:$color-point;}
+            }
+            .price_wrap {
+                position:relative; z-index:100;
+                .dc_original_price {margin-bottom:10px;
+                    .dc_percent {font-size:$font-size-m;}
+                    .original_price {font-size:$font-size-m; color:$color-gray-light-lv1;}
+                    .price_info {
+                        .info_icon {
+                            width:12px; height:12px; @include icon_svg;
+                            }
+                        #info {display:none;
+                            width:350px;
+                            box-shadow:-2px 3px 10px rgba(0,0,0,0.2);
+                            font-size:$font-size-s;
+                            line-height:150%;
+                            color:$color-gray-medium;
+                            padding:15px;
+                            background:$color-white;
+                            border-radius:10px;
+                            position:absolute; top:0; left:0;
+                            transform:translate(-70px,25px); z-index:200;}
+                    }
+                }
+                .current_price {
+                    @include flex-row; align-items: center;
+                    em {font-size:$font-size-2xl; font-weight:$font-weight-bold;}
+                    span {font-size:$font-size-2xl;}
+                    img {width:61px; height:15px; margin-left:10px;}
+                }
+            }
+            .benefit_shipping_box {@include flex-col;
+                em {font-size:$font-size-m; font-weight:$font-weight-bold;}
+                .benefit {@include flex-row; padding:15px 0;
+                    span {font-size:$font-size-m;}
+                    .benefit_title {width:80px;}
+                    .benefit_contents {}
+                }
+                .shipping {@include flex-row; padding:15px 0;
+                    .shipping_title {width:80px;}
+                    .shipping_contents {
+                        @include flex-col; gap:10px;
+                        .shipping_details {width:100%;}
+                        .shipping_details:nth-child(5) { //배송예정일 박스
+                            width:100%;
+                            background:$color-gray-light-lv3;
+                            padding:15px 15px;
+                            border-radius:5px;}
+                        em.date {color:$color-point;}
+                    }
+                    }
+            }
+            #orderFrm {
+                .product_opt {
+                    @include flex-col; gap:25px; margin-bottom:25px;
+                    select {
+                        appearance:none;
+                        background-image:url(../images/play_arrow.png);
+                        background-repeat:no-repeat;
+                        background-position:97% 50%;
+                    }
+                    #color, #size {
+                        border:1px solid $color-gray-light-lv3; 
+                        width:100%; padding:10px;
+                        border-radius:5px;
+                        .color_opt, .size_opt {font-size:$font-size-s;}
+                    }
+                }
+                .order_list {
+                    width:100%; height:max-content;
+                    padding:15px; background:$color-gray-light-lv3;
+                    @include grid-r2-c2;
+                    grid-template-areas: 
+                    'option button'
+                    'total sum';
+                    gap:10px;
+                    /* .option_info, .close, .total_price_box, .total_sum_one {line-height:150%;} */
+                    .option_info {grid-area:'option'
+                        span {font-size:$font-size-xs;}
+                    }
+                    .close {
+                        grid-area:'button';
+                        text-align: right;
+                    }
+                    .total_price_box {
+                        grid-area:'total';
+                        width:max-content; padding:5px 10px;
+                        background:$color-white;
+                        border:1px solid $color-gray-light-lv2;
+                        border-radius:5px;
+                        #minus {font-size:$font-size-xl;}
+                        #plus {font-size:$font-size-xl;}
+                        #input_num {width:50px; padding:0 15px; text-align: center;}
+                    }
+                    .total_sum_one {
+                        grid-area:'sum';text-align: right ;
+                        transform:translateY(10px);
+                        strong {font-size:$font-size-l; font-weight:$font-weight-bold;}
+                        span {font-size:$font-size-l;}
+                    }
+                }
+                .total_price {
+                    @include flex-row; justify-content:space-between;
+                    padding:25px 0;
+                    h2 {font-size:$font-size-s;}
+                    .total_sum_one {
+                        strong {font-size:$font-size-l; font-weight:$font-weight-bold;}
+                        span {font-size:$font-size-l;}
+                    }
+                }
+                .btn_group {
+                    @include flex-row; gap:10px; width:100%;
+                    #cart_btn, #buy_btn {@include cart_buy_btn;}
+                    #cart_btn {
+                        width:100%; border: 1px solid $color-point;
+                        font-weight:$font-weight-bold;
+                        color:$color-point;}
+                    #buy_btn {
+                        width:100%; background:$color-point;
+                        font-weight:$font-weight-bold;
+                        color:$color-white;}
+                }
+            }
+        }
+    }
+}

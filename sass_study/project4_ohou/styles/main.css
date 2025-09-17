@@ -1,0 +1,355 @@
+@charset "UTF-8";
+#wrap header {
+  height: 52px;
+  padding: 0 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #bdbdbd;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 24px;
+}
+#wrap header a {
+  font-size: 1.063rem;
+  font-weight: 700;
+}
+
+#wrap main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 26px;
+  max-width: 1156px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+#wrap main .path a {
+  font-size: 0.875rem;
+}
+#wrap main .path img {
+  width: 6px;
+  height: 6px;
+  transform: translateY(-2px);
+}
+#wrap main .container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#wrap main .container .overview_img {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+}
+#wrap main .container .overview_img .img_col1 {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+#wrap main .container .overview_img .img_col1 a {
+  width: 56px;
+  height: 56px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#wrap main .container .overview_img .img_col1 a img {
+  width: 100%;
+  height: 100%;
+}
+#wrap main .container .overview_img .img_col2 {
+  width: 559px;
+  height: 559px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#wrap main .container .overview_img .img_col2 img {
+  width: 100%;
+  height: 100%;
+}
+#wrap main .container {
+  /* -------------------------------------- 우측 정보 ------------------------------------ */
+}
+#wrap main .container .contents {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+  align-items: left;
+  margin-left: 24px;
+}
+#wrap main .container .contents .brand {
+  font-size: 0.875rem;
+}
+#wrap main .container .contents .product_info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+#wrap main .container .contents .product_info .product_name {
+  font-size: 1.375rem;
+}
+#wrap main .container .contents .product_info .right_icon {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  align-items: center;
+}
+#wrap main .container .contents .product_info .right_icon .scrap {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+#wrap main .container .contents .product_info .right_icon .scrap .bookmark {
+  width: 20px;
+  height: 20px;
+  stroke: #000;
+  stroke-width: 2px;
+}
+#wrap main .container .contents .product_info .right_icon .scrap span {
+  font-size: 0.813rem;
+  color: #000;
+}
+#wrap main .container .contents .product_info .right_icon .share .share_icon {
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+  stroke-width: 2px;
+}
+#wrap main .container .contents .review {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+#wrap main .container .contents .review .review_stars {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#wrap main .container .contents .review .review_txt {
+  color: #0aa5ff;
+}
+#wrap main .container .contents .price_wrap {
+  position: relative;
+  z-index: 100;
+}
+#wrap main .container .contents .price_wrap .dc_original_price {
+  margin-bottom: 10px;
+}
+#wrap main .container .contents .price_wrap .dc_original_price .dc_percent {
+  font-size: 1rem;
+}
+#wrap main .container .contents .price_wrap .dc_original_price .original_price {
+  font-size: 1rem;
+  color: #828c94;
+}
+#wrap main .container .contents .price_wrap .dc_original_price .price_info .info_icon {
+  width: 12px;
+  height: 12px;
+  stroke: #000;
+  stroke-width: 2px;
+}
+#wrap main .container .contents .price_wrap .dc_original_price .price_info #info {
+  display: none;
+  width: 350px;
+  box-shadow: -2px 3px 10px rgba(0, 0, 0, 0.2);
+  font-size: 0.875rem;
+  line-height: 150%;
+  color: #757575;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-70px, 25px);
+  z-index: 200;
+}
+#wrap main .container .contents .price_wrap .current_price {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+#wrap main .container .contents .price_wrap .current_price em {
+  font-size: 2rem;
+  font-weight: 700;
+}
+#wrap main .container .contents .price_wrap .current_price span {
+  font-size: 2rem;
+}
+#wrap main .container .contents .price_wrap .current_price img {
+  width: 61px;
+  height: 15px;
+  margin-left: 10px;
+}
+#wrap main .container .contents .benefit_shipping_box {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#wrap main .container .contents .benefit_shipping_box em {
+  font-size: 1rem;
+  font-weight: 700;
+}
+#wrap main .container .contents .benefit_shipping_box .benefit {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 15px 0;
+}
+#wrap main .container .contents .benefit_shipping_box .benefit span {
+  font-size: 1rem;
+}
+#wrap main .container .contents .benefit_shipping_box .benefit .benefit_title {
+  width: 80px;
+}
+#wrap main .container .contents .benefit_shipping_box .shipping {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 15px 0;
+}
+#wrap main .container .contents .benefit_shipping_box .shipping .shipping_title {
+  width: 80px;
+}
+#wrap main .container .contents .benefit_shipping_box .shipping .shipping_contents {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+#wrap main .container .contents .benefit_shipping_box .shipping .shipping_contents .shipping_details {
+  width: 100%;
+}
+#wrap main .container .contents .benefit_shipping_box .shipping .shipping_contents .shipping_details:nth-child(5) {
+  width: 100%;
+  background: #dadce0;
+  padding: 15px 15px;
+  border-radius: 5px;
+}
+#wrap main .container .contents .benefit_shipping_box .shipping .shipping_contents em.date {
+  color: #0aa5ff;
+}
+#wrap main .container .contents #orderFrm .product_opt {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+#wrap main .container .contents #orderFrm .product_opt select {
+  appearance: none;
+  background-image: url(../images/play_arrow.png);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+}
+#wrap main .container .contents #orderFrm .product_opt #color, #wrap main .container .contents #orderFrm .product_opt #size {
+  border: 1px solid #dadce0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+#wrap main .container .contents #orderFrm .product_opt #color .color_opt, #wrap main .container .contents #orderFrm .product_opt #color .size_opt, #wrap main .container .contents #orderFrm .product_opt #size .color_opt, #wrap main .container .contents #orderFrm .product_opt #size .size_opt {
+  font-size: 0.875rem;
+}
+#wrap main .container .contents #orderFrm .order_list {
+  width: 100%;
+  height: max-content;
+  padding: 15px;
+  background: #dadce0;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "option button" "total sum";
+  gap: 10px;
+  /* .option_info, .close, .total_price_box, .total_sum_one {line-height:150%;} */
+}
+#wrap main .container .contents #orderFrm .order_list .option_info {
+  grid-area: "option" span;
+  grid-area-font-size: 0.813rem;
+}
+#wrap main .container .contents #orderFrm .order_list .close {
+  grid-area: "button";
+  text-align: right;
+}
+#wrap main .container .contents #orderFrm .order_list .total_price_box {
+  grid-area: "total";
+  width: max-content;
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+#wrap main .container .contents #orderFrm .order_list .total_price_box #minus {
+  font-size: 1.375rem;
+}
+#wrap main .container .contents #orderFrm .order_list .total_price_box #plus {
+  font-size: 1.375rem;
+}
+#wrap main .container .contents #orderFrm .order_list .total_price_box #input_num {
+  width: 50px;
+  padding: 0 15px;
+  text-align: center;
+}
+#wrap main .container .contents #orderFrm .order_list .total_sum_one {
+  grid-area: "sum";
+  text-align: right;
+  transform: translateY(10px);
+}
+#wrap main .container .contents #orderFrm .order_list .total_sum_one strong {
+  font-size: 1.063rem;
+  font-weight: 700;
+}
+#wrap main .container .contents #orderFrm .order_list .total_sum_one span {
+  font-size: 1.063rem;
+}
+#wrap main .container .contents #orderFrm .total_price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+#wrap main .container .contents #orderFrm .total_price h2 {
+  font-size: 0.875rem;
+}
+#wrap main .container .contents #orderFrm .total_price .total_sum_one strong {
+  font-size: 1.063rem;
+  font-weight: 700;
+}
+#wrap main .container .contents #orderFrm .total_price .total_sum_one span {
+  font-size: 1.063rem;
+}
+#wrap main .container .contents #orderFrm .btn_group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  width: 100%;
+}
+#wrap main .container .contents #orderFrm .btn_group #cart_btn, #wrap main .container .contents #orderFrm .btn_group #buy_btn {
+  width: 165.5px;
+  height: 57px;
+  border-radius: 5px;
+  font-size: 1.063rem;
+  margin: 0 auto;
+}
+#wrap main .container .contents #orderFrm .btn_group #cart_btn {
+  width: 100%;
+  border: 1px solid #0aa5ff;
+  font-weight: 700;
+  color: #0aa5ff;
+}
+#wrap main .container .contents #orderFrm .btn_group #buy_btn {
+  width: 100%;
+  background: #0aa5ff;
+  font-weight: 700;
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  #wrap main .path {
+    padding: 15px 80px;
+  }
+  #wrap main .container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
