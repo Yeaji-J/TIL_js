@@ -50,9 +50,9 @@
                     }
                 }
             }
-            .review { @include flex-row; gap:10px;
-                .review_stars{@include flex-row;}
-                .review_txt {color:$color-point;}
+            .review { @include flex-row; gap:10px; width:min-content;
+                .review_stars{@include flex-row; justify-content: space-between;}
+                .review_txt {color:$color-point; font-size:$font-size-s; width:max-content;}
             }
             .price_wrap {
                 position:relative; z-index:100;
@@ -114,11 +114,12 @@
                         background-position:97% 50%;
                     }
                     #color, #size {
-                        border:1px solid $color-gray-light-lv3; 
+                        border:1px solid $color-point; 
                         width:100%; padding:10px;
                         border-radius:5px;
                         .color_opt, .size_opt {font-size:$font-size-s;}
                     }
+                    #size {border:1px solid $color-gray-light-lv3; }
                 }
                 .order_list {
                     width:100%; height:max-content;
