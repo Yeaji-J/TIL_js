@@ -1,0 +1,111 @@
+@use './common.scss' as*;
+// pagenation, 작은 사진 비율, 화살표 방향, 인포 박스
+body {width:1912px; height:100vh;
+    header {
+        width:1721px;
+        margin:0 auto;
+        .gnb {
+            height:70px;
+            @include flex-row;
+            justify-content: space-between; align-items: center;
+            a {
+                img {width:158px; height:30px;}
+            }
+        }
+    }
+    main {
+        width:1400px; height:1200px; margin:0 auto;
+        .breadcrum {
+            @include flex-row;
+            justify-content:left; align-items: center; gap:8px;
+            margin-bottom:20px;
+            a:first-child {color:$color-gray-txt;
+                img {margin-right:3px;}}
+        }
+        #main_wrap {
+            background:skyblue;
+            @include flex-row; gap:82px;
+            .row1_bnr {
+                @include flex-row; gap:20px;
+                .small_bnr_scope {
+                    @include flex-col; gap:6px;
+                    align-items:center;
+                    a {
+                        border-radius:10px; overflow:hidden;
+                        img {width:84px; height:84px;}}
+                        .arrow_top_btn,
+                        .arrow_bottom_btn {
+                            width:24px; height:24px;
+                            border:1px solid $color-gray-txt;
+                            border-radius:50px;
+                        }
+                }
+                .big_bnr_scope {
+                    width:508px; height:678px;
+                    border-radius:30px; overflow:hidden;
+                    .big_images {width:508px; height:678px;}
+                    .pagenation {
+                        @include flex-row; gap:10px;
+                        span {
+                            width:8px; height:8px;
+                            color:$color-gray-txt-desc;
+                        }
+
+                    }
+                }
+            }
+            .row2_contents {
+                width:706px;
+                background:pink;
+                .title {
+                    @include flex-row; gap:6px;
+                    h2 {
+                        font-size:$font-size-2xl;
+                        font-weight:$font-weight-semibold;
+                        padding-bottom:20px;
+                    }
+                    .share_icon {width:24px; height:24px;padding-top:8px;}
+                }
+                .title_desc {
+                    font-size:$font-size-m;
+                    color:$color-gray-txt-desc;
+                    margin-bottom:30px;
+                }
+                .price {
+                    margin-bottom:20px;
+                    span {font-size:$font-size-s; color:$color-gray-txt;} // span 공통
+                    .original_price {
+                        del {
+                            font-size:$font-size-l;
+                            font-weight:$font-weight-bold;
+                        }
+                    }
+                    .dc_price {
+                        img {width:18px; height:18px; transform:translateY(4px);} //info
+                        em {font-size:$font-size-xl; font-weight:$font-weight-bold;} //em 공통
+                        em:first-child {color:$color-red;}
+                        strong {background:#fff; display:none;}
+                    }
+                }
+                .membership {background:lime;
+                    padding-bottom:20px;
+                    .membership_wrap {
+                        @include flex-row; width:max-content; gap:14px;
+                        .slide {background:yellow;
+                            width:448px; height:96px;
+                            background-color:$color-gray-box;
+                            padding: 10px;
+                            border-radius:10px;
+                            .slide_title, .slide_content
+                            {font-size:$font-size-xs;}
+                        }
+                    }
+                }
+                .shipping_price {
+                    margin:30px 0;
+                }
+            } 
+        }
+    }
+    footer {}
+}

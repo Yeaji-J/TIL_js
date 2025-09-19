@@ -1,0 +1,39 @@
+$font-size-2xl:1.875rem; //제품명, 최종결제금액
+$font-size-xl:1.5rem; //할인율, 할인가 
+$font-size-l:1.25rem; //원가
+$font-size-m:1rem; //상품 설명, 주문박스 내 상품정보, 상품금액합계
+$font-size-s:0.875rem; //권장소비자가, welcome 헤택가, 배송비, 3,000원, 하단결제정보
+$font-size-xs:0.813rem; //멤버십 헤택 내용, input 수량
+$font-weight-bold:700;
+$font-weight-med:500;
+$font-weight-semibold:600;
+$line-height-info:170%;
+$color-gray-box:#f6f6f6;
+$color-gray-txt:#999;
+$color-gray-txt-desc:#666;
+$color-gray-txt-info:#767676;
+$color-black:#111;
+$color-black-orderbox:#333;
+$color-red:#F22525;
+
+@mixin btn {
+    width:320.5px; height:60px;
+    //border-radius:5px;
+    font-size:1.125rem;
+    font-weight:$font-weight-bold;
+    margin:0 auto;
+}
+
+@mixin membership_title {
+    font-size:0.75rem;
+}
+
+@mixin flex-row {
+    display:flex;
+    flex-flow:row nowrap;
+}
+
+@mixin flex-col {
+    display:flex;
+    flex-flow:column nowrap;
+}

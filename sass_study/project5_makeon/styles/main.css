@@ -1,0 +1,167 @@
+body {
+  width: 1912px;
+  height: 100vh;
+}
+body header {
+  width: 1721px;
+  margin: 0 auto;
+}
+body header .gnb {
+  height: 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .gnb a img {
+  width: 158px;
+  height: 30px;
+}
+body main {
+  width: 1400px;
+  height: 1200px;
+  margin: 0 auto;
+}
+body main .breadcrum {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+body main .breadcrum a:first-child {
+  color: #999;
+}
+body main .breadcrum a:first-child img {
+  margin-right: 3px;
+}
+body main #main_wrap {
+  background: skyblue;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 82px;
+}
+body main #main_wrap .row1_bnr {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+body main #main_wrap .row1_bnr .small_bnr_scope {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 6px;
+  align-items: center;
+}
+body main #main_wrap .row1_bnr .small_bnr_scope a {
+  border-radius: 10px;
+  overflow: hidden;
+}
+body main #main_wrap .row1_bnr .small_bnr_scope a img {
+  width: 84px;
+  height: 84px;
+}
+body main #main_wrap .row1_bnr .small_bnr_scope .arrow_top_btn,
+body main #main_wrap .row1_bnr .small_bnr_scope .arrow_bottom_btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #999;
+  border-radius: 50px;
+}
+body main #main_wrap .row1_bnr .big_bnr_scope {
+  width: 508px;
+  height: 678px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+body main #main_wrap .row1_bnr .big_bnr_scope .big_images {
+  width: 508px;
+  height: 678px;
+}
+body main #main_wrap .row1_bnr .big_bnr_scope .pagenation {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+body main #main_wrap .row1_bnr .big_bnr_scope .pagenation span {
+  width: 8px;
+  height: 8px;
+  color: #666;
+}
+body main #main_wrap .row2_contents {
+  width: 706px;
+  background: pink;
+}
+body main #main_wrap .row2_contents .title {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 6px;
+}
+body main #main_wrap .row2_contents .title h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+body main #main_wrap .row2_contents .title .share_icon {
+  width: 24px;
+  height: 24px;
+  padding-top: 8px;
+}
+body main #main_wrap .row2_contents .title_desc {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+body main #main_wrap .row2_contents .price {
+  margin-bottom: 20px;
+}
+body main #main_wrap .row2_contents .price span {
+  font-size: 0.875rem;
+  color: #999;
+}
+body main #main_wrap .row2_contents .price .original_price del {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+body main #main_wrap .row2_contents .price .dc_price img {
+  width: 18px;
+  height: 18px;
+  transform: translateY(4px);
+}
+body main #main_wrap .row2_contents .price .dc_price em {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+body main #main_wrap .row2_contents .price .dc_price em:first-child {
+  color: #F22525;
+}
+body main #main_wrap .row2_contents .price .dc_price strong {
+  background: #fff;
+  display: none;
+}
+body main #main_wrap .row2_contents .membership {
+  background: lime;
+  padding-bottom: 20px;
+}
+body main #main_wrap .row2_contents .membership .membership_wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  width: max-content;
+  gap: 14px;
+}
+body main #main_wrap .row2_contents .membership .membership_wrap .slide {
+  background: yellow;
+  width: 448px;
+  height: 96px;
+  background-color: #f6f6f6;
+  padding: 10px;
+  border-radius: 10px;
+}
+body main #main_wrap .row2_contents .membership .membership_wrap .slide .slide_title, body main #main_wrap .row2_contents .membership .membership_wrap .slide .slide_content {
+  font-size: 0.813rem;
+}
+body main #main_wrap .row2_contents .shipping_price {
+  margin: 30px 0;
+}
+
+/*# sourceMappingURL=main.css.map */
