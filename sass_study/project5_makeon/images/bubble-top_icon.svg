@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7">
+    <defs>
+        <clipPath id="2wnui7bhla">
+            <path fill="#fff" d="M0 0H8V7H0z" transform="translate(87 187)"/>
+        </clipPath>
+    </defs>
+    <g>
+        <g clip-path="url(#2wnui7bhla)" transform="translate(-87 -187)">
+            <g fill="#fff" stroke-miterlimit="10">
+                <path d="M13.065 9.984H.935L7 .9l6.065 9.084z" transform="translate(84 187)"/>
+                <path fill="#3a416f" d="M7 1.8L1.87 9.485h10.26L7 1.8M7 0l7 10.484H0L7 0z" transform="translate(84 187)"/>
+            </g>
+        </g>
+    </g>
+</svg>
