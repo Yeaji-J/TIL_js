@@ -7,7 +7,7 @@ strong,em,q,blockquote,sub,sup,del,s,code,address,
 form,input,fieldset,legend,label,select,option,button,
 textarea,summary,hr {
     margin:0; padding:0; line-height:1.2;
-    font-family:'Noto Sans KR',sans-serif;
+    font-family:'Pretendard',sans-serif;
     letter-spacing:1.0; font-size:1.0rem;
     font-style:normal; font-weight:normal;
     border:0; color:#111;

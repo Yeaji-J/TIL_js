@@ -1,6 +1,6 @@
 @use './common.scss' as*;
-// pagenation, 작은 사진 비율, 화살표 방향, 인포 박스
-body {width:1912px; height:100vh;
+
+body {width:1905px; height:100vh;
     header {
         width:1721px;
         margin:0 auto;
@@ -15,97 +15,252 @@ body {width:1912px; height:100vh;
     }
     main {
         width:1400px; height:1200px; margin:0 auto;
-        .breadcrum {
+        .breadcrum {padding-top:50px;
             @include flex-row;
             justify-content:left; align-items: center; gap:8px;
             margin-bottom:20px;
-            a:first-child {color:$color-gray-txt;
-                img {margin-right:3px;}}
+            a:first-child {
+                @include flex-row;
+                align-items:center;
+                color:$color-gray-txt;
+            img {margin-right:3px;}}
+            a {font-size:$font-size-s;}
         }
         #main_wrap {
-            background:skyblue;
             @include flex-row; gap:82px;
             .row1_bnr {
                 @include flex-row; gap:20px;
                 .small_bnr_scope {
                     @include flex-col; gap:6px;
                     align-items:center;
-                    a {
+                    .small_images {width:84px; height:84px;
                         border-radius:10px; overflow:hidden;
-                        img {width:84px; height:84px;}}
-                        .arrow_top_btn,
-                        .arrow_bottom_btn {
+                        img {width:100%; transform:translateY(-10px);}}
+                    .arrow_top_btn,
+                    .arrow_bottom_btn {
                             width:24px; height:24px;
                             border:1px solid $color-gray-txt;
                             border-radius:50px;
-                        }
+                    }
+                    .arrow_top_btn {
+                        transform:rotate(-90deg);
+                    }
+                    .arrow_bottom_btn {
+                        transform:rotate(90deg);
+                    }
                 }
                 .big_bnr_scope {
+                    @include flex-row; gap:0;
                     width:508px; height:678px;
                     border-radius:30px; overflow:hidden;
-                    .big_images {width:508px; height:678px;}
-                    .pagenation {
-                        @include flex-row; gap:10px;
-                        span {
-                            width:8px; height:8px;
-                            color:$color-gray-txt-desc;
+                    position:relative; z-index:4;
+                    .big_images {
+                        width:508px; height:678px;
                         }
-
+                    .pagenation {
+                        width:100%; height:12px;
+                        @include flex-row; gap:10px; justify-content:center;
+                        align-items:center;
+                        position:absolute; bottom:17px; left:0; z-index:5;
+                        a {
+                            width:8px; height:8px;
+                            background-color:$color-gray-pagenation;
+                            border-radius:50px;
+                            opacity:0.3;
+                        }
+                        a.active {
+                            width:14px; height:14px;
+                            background-color:$color-gray-pagenation;
+                            opacity:100%;
+                        }
                     }
                 }
             }
+            // 오른쪽 정보들 -------------------------------------
             .row2_contents {
                 width:706px;
-                background:pink;
                 .title {
                     @include flex-row; gap:6px;
                     h2 {
+                        width:676px;
                         font-size:$font-size-2xl;
                         font-weight:$font-weight-semibold;
                         padding-bottom:20px;
                     }
-                    .share_icon {width:24px; height:24px;padding-top:8px;}
+                    .share_icon {width:24px; height:24px;margin-top:8px;}
                 }
                 .title_desc {
-                    font-size:$font-size-m;
-                    color:$color-gray-txt-desc;
                     margin-bottom:30px;
+                    p {font-size:$font-size-m;
+                        color:$color-gray-txt-desc;
+                        font-weight:$font-weight-med;
+                    }
                 }
                 .price {
                     margin-bottom:20px;
                     span {font-size:$font-size-s; color:$color-gray-txt;} // span 공통
                     .original_price {
                         del {
+                            color:$color-gray-txt;
                             font-size:$font-size-l;
-                            font-weight:$font-weight-bold;
                         }
                     }
                     .dc_price {
                         img {width:18px; height:18px; transform:translateY(4px);} //info
                         em {font-size:$font-size-xl; font-weight:$font-weight-bold;} //em 공통
                         em:first-child {color:$color-red;}
-                        strong {background:#fff; display:none;}
+                        a {position:relative;
+                        strong {background:#fff;
+                                display:none; width:80px; // JS -> display:block
+                                font-size:$font-size-xs;
+                                border:1px solid $color-black;
+                                border-radius:8px;
+                                padding:9px 14px;
+                                position:absolute; bottom:-7px; left:50%;
+                                transform: translate(-50%, 100%); z-index:1;
+                                &::before {content:'';
+                                    width:8px; height:7px;
+                                    position:absolute;top:0px; left:50%;
+                                    transform:translate(-50%, -100%); z-index:2;
+                                    background-image:url(../images/bubble-top_icon.svg);
+                                    background-repeat:no-repeat;
+                                    background-size:contain;
+                                    background-position:center;
+                                }
+                                }
+                        }
+                        
                     }
                 }
-                .membership {background:lime;
+                .membership {
                     padding-bottom:20px;
+                    width:100%;
+                    overflow:hidden;
                     .membership_wrap {
                         @include flex-row; width:max-content; gap:14px;
-                        .slide {background:yellow;
+                        .slide {
                             width:448px; height:96px;
+                            @include flex-row;
                             background-color:$color-gray-box;
-                            padding: 10px;
+                            padding:20px 30px;
                             border-radius:10px;
-                            .slide_title, .slide_content
-                            {font-size:$font-size-xs;}
+                            .slide_txt {
+                                @include flex-row;
+                                align-items:center;
+                                .slide_title {
+                                width:60px;
+                                font-size:0.75rem;font-weight:$font-weight-semibold;
+                                color:$color-gray-txt;
+                                }
+                                .slide_content{
+                                width:322px;
+                                font-size:$font-size-xs;
+                                font-weight:$font-weight-med;
+                                line-height:18px;
+                                }
+                            }
                         }
+                        .slide1 {
+                            padding:20px 20px 20px 15px;
+                            @include flex-row; gap: 14px;
+                            img {width:48px; height:48px;}
+                            .slide_txt {@include flex-col; align-items:flex-start;
+                                .slide_content {width:340px;}
+                            }
+                            }
                     }
                 }
                 .shipping_price {
                     margin:30px 0;
+                    padding:30px 0;
+                    border-top:1px solid $color-gray-border;
+                    border-bottom:1px solid $color-gray-border;
+                    em {margin-right:61px;
+                        color:$color-gray-txt;
+                        font-size:$font-size-s;
+                        font-weight:$font-weight-med;}
+                    span {font-size:$font-size-s;}
+                }
+                #order_Frm {
+                    .order_box {
+                        padding:24px; margin-bottom:50px;
+                        border:1px solid $color-gray-border;
+                        border-radius:20px;
+                        @include flex-col; gap:30px;
+                        .order_box_col1 {
+                            font-size:$font-size-m;
+                            font-weight:$font-weight-semibold;
+                        }
+                        .order_box_col2 {
+                            @include flex-row;
+                            justify-content:space-between;
+                            #quantity_box {border:0.5px solid $color-gray-border;
+                                #minus, #plus {
+                                    width:30px; height:30px;}
+                                #minus {border-right:0.5px solid $color-gray-border;}
+                                }
+                                .quantity_input {
+                                    text-align:center;
+                                    width:45px; height:30px;
+                                    font-size:$font-size-xs;
+                                    }
+                                #plus {
+                                    border-left:0.5px solid $color-gray-border;}
+                            }
+                            .original_total_price {
+                                font-size:$font-size-l;
+                                font-weight:$font-weight-bold;
+                            }}
+                        }
+                    }
+                    .total_price {
+                        @include flex-row; justify-content: space-between;
+                        margin-bottom:20px;
+                        p {font-size:$font-size-m;
+                        font-weight:$font-weight-semibold;}
+                        .total_price_num {
+                            @include flex-row;
+                            align-items:flex-end; gap:8px;
+                            .dc_total_price {
+                                font-size:$font-size-2xl;
+                                font-weight:$font-weight-bold;
+                            }
+                            .quantity_num {font-size:$font-size-s;
+                                span {}
+                                .quantity_num {}
+                            }
+                        }
+                    }
+                    .wish_cart_buy_btn {
+                        @include flex-row; align-items: center; gap:0;
+                        margin-bottom:40px;
+                        #wish_btn {
+                            width:58px; height:58px;
+                            border:1px solid $color-black;
+                            border-radius:5px;
+                            margin-right:5px;
+                            img{transform:translateY(2px); width:50%; height:50%;}
+                            }
+                        #cart_btn {
+                            @include btn;
+                            border:1px solid $color-black;
+                            border-top-left-radius:5px;
+                            border-bottom-left-radius:5px;
+                        }
+                        #buy_btn {
+                            @include btn;
+                            border:1px solid $color-black;
+                            border-top-right-radius:5px;
+                            border-bottom-right-radius:5px;
+                            color:$color-white;
+                            background:$color-black;
+                        }
+                    }
+                }.info {
+                    li {font-size:$font-size-s;
+                    line-height: $line-height-info;
+                    color:$color-gray-txt-info;}
                 }
             } 
         }
-    }
     footer {}
-}
