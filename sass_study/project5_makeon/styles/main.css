@@ -69,8 +69,7 @@ body main #main_wrap .row1_bnr .small_bnr_scope .small_images img {
   width: 100%;
   transform: translateY(-10px);
 }
-body main #main_wrap .row1_bnr .small_bnr_scope .arrow_top_btn,
-body main #main_wrap .row1_bnr .small_bnr_scope .arrow_bottom_btn {
+body main #main_wrap .row1_bnr .small_bnr_scope .arrow_btn {
   width: 24px;
   height: 24px;
   border: 1px solid #999;
@@ -83,9 +82,6 @@ body main #main_wrap .row1_bnr .small_bnr_scope .arrow_bottom_btn {
   transform: rotate(90deg);
 }
 body main #main_wrap .row1_bnr .big_bnr_scope {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 0;
   width: 508px;
   height: 678px;
   border-radius: 30px;
@@ -93,7 +89,12 @@ body main #main_wrap .row1_bnr .big_bnr_scope {
   position: relative;
   z-index: 4;
 }
-body main #main_wrap .row1_bnr .big_bnr_scope .big_images {
+body main #main_wrap .row1_bnr .big_bnr_scope .big_image_group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0;
+}
+body main #main_wrap .row1_bnr .big_bnr_scope .big_image_group .big_images {
   width: 508px;
   height: 678px;
 }
