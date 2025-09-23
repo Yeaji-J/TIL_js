@@ -1,4 +1,4 @@
-// 1. 작은 이미지 마우스 올리면 opacity 낮아짐
+// 1. 작은 이미지 마우스 올리면 opacity 낮아짐, 마우스 치우면 돌아옴
 // 2. 작은 이미지 클릭 시, 검은색 테두리 & 큰 이미지 슬라이드 & 아래 페이지네이션 움직이기
 // 3. 이미지 상하 이동 버튼 클릭 시 작은 이미지 슬라이드
 // 4. 공유하기 버튼에 마우스 올리면 투명해지고, 버튼 클릭하면 공유하기 팝업
@@ -11,6 +11,28 @@
 // 11. 장바구니, 바로구매 클릭 시 로그아웃 상태면 '회원 혹은 일부 회원등급만 구매 가능합니다. 비회원인 경우 회원가입 후 이용해주세요. 팝업창 ->
 // 12. 위 팝업창에서 확인 누르면 로그인 페이지로 이동, 로그인 상태면 각각 페이지로 이동
 
-// 1. 작은 이미지 마우스 올리면 opacity 낮아짐
-/* const smallImageA = document.querySelectorAll('.small_images');
-smallImageA.addEvent */
+// 1. 작은 이미지 마우스 올리면 opacity 낮아짐, 마우스 치우면 돌아옴
+const smallImage = document.querySelectorAll('.small_images')
+function imgMouseFunc (img){
+    img.addEventListener('mouseover',()=>{
+        img.style.opacity = '50%'
+    })
+    img.addEventListener('mouseout',()=>{
+        img.style.opacity = '100%'
+    })
+}
+for(let i=0; i<smallImage.length; i++){imgMouseFunc(smallImage[i]);}
+
+// 2. 작은 이미지 클릭 시, 검은색 테두리 & 큰 이미지 슬라이드 & 아래 페이지네이션 움직이기
+
+function imgClickFunc (img){
+    img.style.border = '1px solid #111'
+    
+}
+smallImage[0].addEventListener('click',()=>{
+    smallImage[0].style.border = '1px solid #111'
+})
+smallImage[1].addEventListener('click',()=>{
+    smallImage[1].style.border = '1px solid #111'
+    smallImage[0].style.border = ''
+})
