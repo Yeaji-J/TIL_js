@@ -1,0 +1,14 @@
+#wrap {width:1000px; height:100vh; margin:0 auto;}
+#wrap .input_section {
+    background-image:url(./images/weight2.jpg);
+    background-size: 100%;
+    background-position: center;
+
+}
+#wrap .input_section .current_height {}
+#wrap .input_section .current_height p {}
+#wrap .input_section .current_height .input_h {}
+#wrap .input_section .current_weight {}
+#wrap .input_section .current_weight p {}
+#wrap .input_section .current_weight .input_w {}
+#wrap .input_section button {}

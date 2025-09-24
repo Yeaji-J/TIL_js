@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탄생화 과제</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        #wrap {
+            width:600px; height:800px; margin:50px auto;
+            border-radius:20px;
+            background-image:url(https://i.pinimg.com/1200x/cb/5d/6f/cb5d6f8968feaef0b5a0a2ed40e1b12e.jpg);
+            background-size:cover;
+        }
+        #birth_flower_form {
+            height:300px;
+            padding:8cqmax 0;
+            background:rgba(255,255,255,0.4);
+            display:flex; flex-flow:column nowrap; gap:30px;
+            align-items:center;
+
+        }
+        #birth_info {
+            display:flex; flex-flow:row nowrap; gap:10px;
+            justify-content:center; align-items:center;
+
+        }
+        .birth {
+            width:100px; height:40px; text-align:center;
+            padding:5px 10px;
+            border-radius:10px;
+        }
+        .txt {
+            font-size:1.2rem;
+            font-weight:500;;
+        }
+        #warning_txt {font-size:1.2rem; color:#444; }
+        #check_btn {
+            background: palegoldenrod;
+            color:#444;
+            font-size:1.5rem;
+            padding:10px; width:400px;
+            border-radius:10px;
+        }
+        #result_box {
+            margin:0 auto; margin-top:300px;
+            text-align:center;
+            padding:10px; width:500px;
+            color:#fff;
+            font-size:1.8rem;
+            font-weight:500;
+            font-style:italic;
+            line-height:150%;;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <form action="#" id="birth_flower_form">
+            <div id="birth_info">
+                <input type="text" class="birth birth_y" placeholder="예) 2025">
+                <span class="txt">년</span>
+                <input type="text" class="birth birth_m" placeholder="예) 09">
+                <span class="txt">월</span>
+                <input type="text" class="birth birth_d" placeholder="예) 24">
+                <span class="txt">일</span>
+            </div>
+            <p id="warning_txt"><!-- 생년월일을 입력하세요 --></p>
+            <button type="button" id="check_btn">내 탄생화와 꽃말 확인하기</button>
+        </form>
+        <p id="result_box"><!-- 6월의 탄생화는<br>백합, 꽃말은 순결입니다 --> </p>
+    </div>
+</body>
+</html>
