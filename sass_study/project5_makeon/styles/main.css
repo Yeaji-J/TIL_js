@@ -131,6 +131,8 @@ body main #main_wrap .row2_contents .title {
   display: flex;
   flex-flow: row nowrap;
   gap: 6px;
+  position: relative;
+  z-index: 12;
 }
 body main #main_wrap .row2_contents .title h2 {
   width: 676px;
@@ -142,6 +144,30 @@ body main #main_wrap .row2_contents .title .share_icon {
   width: 24px;
   height: 24px;
   margin-top: 8px;
+}
+body main #main_wrap .row2_contents .title .pop_up_share {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  background: pink;
+  border-radius: 20px;
+  width: 400px;
+  height: 240px;
+  padding: 44px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+body main #main_wrap .row2_contents .title .pop_up_share .share_icon_group {
+  display: flex;
+  flex-flow: row nowrap;
+}
+body main #main_wrap .row2_contents .title .pop_up_share .share_icon_group .share {
+  display: flex;
+  flex-flow: column nowrap;
+}
+body main #main_wrap .row2_contents .title .pop_up_share .share_icon_group .share img {
+  display: none;
 }
 body main #main_wrap .row2_contents .title_desc {
   margin-bottom: 30px;
