@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>탄생화 과제</title>
     <link rel="stylesheet" href="./styles/reset.css">
-    <script src="./scripts/index.js" defer></script>
+    <!-- 제이쿼리 CDN 필수연결 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/db.js"></script>
+    <!-- <script src="./scripts/index.js" defer></script> 과제 -->
+    <!-- <script src="./scripts/index2.js" defer></script> 풀이. jqeury -->
+    <script src="./scripts/index3.js" defer></script>
     <style>
+        /* #birth_flower_form::before {
+            content:''; display:block;
+            width:100%; height:50%;
+            position:absolute; left:0; bottom:0;
+            background:linear-gradient(to top, #fff 50%, transparent)
+        } */
         #wrap {
-            width:600px; height:800px; margin:50px auto;
+            width:600px; height:800px; margin:50px auto; text-align:center;
             border-radius:20px;
             background-image:url(https://i.pinimg.com/1200x/cb/5d/6f/cb5d6f8968feaef0b5a0a2ed40e1b12e.jpg);
             background-size:cover;
         }
         #birth_flower_form {
             height:300px;
-            padding:8cqmax 0;
+            padding:80px 0;
             background:rgba(255,255,255,0.4);
             display:flex; flex-flow:column nowrap; gap:30px;
             align-items:center;
@@ -33,18 +44,20 @@
         }
         .txt {
             font-size:1.2rem;
-            font-weight:500;;
+            font-weight:500;
+            line-height:150%;
+            border-bottom:3px solid #fff;
         }
         #warning_txt {font-size:1.2rem; color:#444; }
-        #check_btn {
+        #check_btn, #share_btn {
             background: palegoldenrod;
             color:#444;
             font-size:1.5rem;
-            padding:10px; width:400px;
-            border-radius:10px;
+            padding:15px; width:400px; 
+            border-radius:50px;
         }
         #result_box {
-            margin:0 auto; margin-top:300px;
+            margin:0 auto; margin-top:200px; margin-bottom:20px;
             text-align:center;
             padding:10px; width:500px;
             color:#fff;
@@ -53,6 +66,12 @@
             font-style:italic;
             line-height:150%;;
         }
+        #result_box span {
+            color:#fff;
+            font-size:1.8rem;
+            font-weight:500;
+            font-style:italic;
+            line-height:150%;;}
     </style>
 </head>
 <body>
@@ -69,7 +88,8 @@
             <p id="warning_txt"><!-- 생년월일을 입력하세요 --></p>
             <button type="button" id="check_btn">내 탄생화와 꽃말 확인하기</button>
         </form>
-        <p id="result_box"><!-- 6월의 탄생화는<br>백합, 꽃말은 순결입니다 --> </p>
+        <p id="result_box"><span id="m"></span>월의 탄생화는 <span id="flower"></span>,<br>꽃말은 '<span id="meaning"></span>' 입니다</p>
+        <button type="button" id="share_btn">내 탄생화와 꽃말 공유하기</button>
     </div>
 </body>
 </html>
