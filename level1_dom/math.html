@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math | js</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/math.js" defer></script>
+</head>
+<style>
+    body {width:800px; text-align: center;}
+    .min_sort ul {padding:20px 100px;}
+    section {margin: 20px auto;}
+    .min2 {margin: 20px auto;}
+    section > button {
+        background:#000; color:#fff;
+        margin:10px; padding:20px 30px;
+        border-radius:50px;}
+    #total_btn {background:pink}
+    .min2 p {font-size:2rem;}
+    .min_sort {
+        border-top:5px solid #000;
+        border-bottom:5px solid #000;
+        padding:20px;}
+    #coupon {font-size:1.5rem; padding:20px;}
+</style>
+<body>
+    <section class="min2">
+        <button type="button" id="price_btn">최저가 찾기</button>
+        <p class="result1">최저가가 여기 표시됩니다</p>
+        <button type="button" id="delivery_btn">배송비 무료 찾기</button>
+        <p class="result2">배송비가 여기 표시됩니다</p>
+        <h2>쇼핑몰별 최저가</h2>
+        <ul id="shop_list"><!-- js에서 li삽입 위치 --></ul>
+    </section>
+    <section class="min_sort">
+        <button type="button" id="min_price_btn">최저가 찾기</button>
+        <p class="min_price">최저가가 여기 표시됩니다.</p>
+        <button type="button" id="max_price_btn">최고가 찾기</button>
+        <h2>쇼핑몰별 최고가</h2>
+        <ul id="max_list"><!--  js에서 li 삽입 --></ul>
+    </section>
+    <section class="calc">
+        <p>총 금액 : <input type="number" id="price"></p>
+        <p>인원 수 : <input type="number" id="person"></p>
+        <button type="button" id="total_btn">계산하기</button>
+        <p class="result">1명이 낼 금액은 <em></em>원입니다.</p>
+    </section>
+    <section class="ad">
+        <a href="#"><img src="" alt=""></a>
+    </section>
+    <button type="button" id="coupon">할인쿠폰 뽑기</button>
+</body>
+</html>
