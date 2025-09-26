@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper2 | js plugin</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        header {
+            position:fixed; top:0; left:0; z-index:200;
+            width:100%; height:50px;
+            background:#ddd; color:#aaa;
+            font-size:1.5rem;}
+        #wrap {
+            width:100%; height:100vh;
+        }
+        #wrap .swiper-wrapper {}
+        #wrap .swiper-wrapper .swiper-slide {
+            padding-top:70px;
+        }
+        #wrap .swiper-wrapper .ad {background:pink;}
+        #wrap .swiper-wrapper .ad .ad_contents {
+            max-width:1000px; height:400px;
+            background:#fff;
+        }
+        #wrap .swiper-wrapper .ad .ad_contents .swiper-wrapper {}
+        #wrap .swiper-wrapper .ad .ad_contents .swiper-wrapper .swiper-slide {padding-top:0; border:1px solid red;}
+        #wrap .swiper-wrapper .ad .ad_contents .swiper-wrapper .ad1 img {width:100%; height:100%;}
+        #wrap .swiper-wrapper .ad .ad_contents .swiper-wrapper .ad2 img {width:100%; height:100%;}
+        #wrap .swiper-wrapper .ad .ad_contents .swiper-wrapper .ad3 img {width:100%; height:100%;}
+        #wrap .swiper-wrapper .best {background:palegreen; display:flex; flex-flow:column nowrap; gap:20px;}
+        #wrap .swiper-wrapper .best h1 {padding-left:20px; font-size:1.2rem;}
+        #wrap .swiper-wrapper .best #best_wrap {display:flex; flex-flow:row nowrap; gap:20px; padding-left:20px;} /* ul */
+        #wrap .swiper-wrapper .best #best_wrap .best_container {position:relative; width:400px; height:450px;} /* li */
+        #wrap .swiper-wrapper .best #best_wrap .best_container a {}
+        #wrap .swiper-wrapper .best #best_wrap .best_container .swiper-button-next {
+            color:red; transform:scale(0.8) rotate(-90deg);
+            top:35%; bottom:auto; right:10px; left:auto;
+
+        }
+        #wrap .swiper-wrapper .best #best_wrap .best_container .swiper-button-prev {
+            color:red; transform:scale(0.8) rotate(-90deg);
+            top:35%; bottom:auto; left:25px; right:auto;
+        }
+        #wrap .swiper-wrapper .best #best_wrap .best_container a div[id^=product] {width:400px; height:400px;}
+        #wrap .swiper-wrapper .best #best_wrap .best_container a div[id^=product] .swiper-wrapper {}
+        #wrap .swiper-wrapper .best #best_wrap .best_container a div[id^=product] .swiper-wrapper .swiper-slide {}
+        #wrap .swiper-wrapper .best #best_wrap .best_container a div[id^=product] .swiper-wrapper img {
+            position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:100%; height:100%;
+        }
+        #wrap .swiper-wrapper .best #best_wrap .best_container .content a {
+            margin-top:20px; display:flex; flex-flow:column nowrap; gap:5px;
+        }
+        #wrap .swiper-wrapper .new {background:palegoldenrod;}
+        #wrap .swiper-wrapper .md {background:paleturquoise}
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <div class="swiper" id="wrap">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ad">
+                <h1>광고</h1>
+                <div class="swiper ad_contents"><!-- 1000 * 400 -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide ad1">
+                            <img src="https://i.pinimg.com/1200x/80/be/b3/80beb3f243f3fee61faedd6efc9eea23.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide ad2">
+                            <img src="https://i.pinimg.com/736x/94/07/83/940783d946772da7933e3747e30c9e06.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide ad3">
+                            <img src="https://i.pinimg.com/736x/3a/b7/1f/3ab71f547c809e5ddcf80e20a4124777.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide best">
+                <h1>베스트상품</h1>
+                <ul id="best_wrap"> <!-- 전체 묶음 -->
+                    <li class="best_container"> <!-- 카드1 -->
+                        <div class="swiper-button-prev"></div> <!-- 자식, 자손 금지 -->
+                        <div class="swiper-button-next"></div>
+                        <a href="#">
+                            <div class="swiper" id="product001">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide img1"><img src="./images/gentile_01.jpg" alt=""></div>
+                                    <div class="swiper-slide img2"><img src="./images/gentile_02.jpg" alt=""></div>
+                                    <div class="swiper-slide img3"><img src="./images/gentile_03.jpg" alt=""></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="content">
+                            <a href="#">
+                                <h2>에덴 02(BR)</h2>
+                                <p>330,000원</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="best_container"> <!-- 카드2 -->
+                        <a href="#">
+                            <div class="swiper" id="product002">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide img1"><img src="./images/gentile_04.jpg" alt=""></div>
+                                    <div class="swiper-slide img2"><img src="./images/gentile_05.jpg" alt=""></div>
+                                    <div class="swiper-slide img3"><img src="./images/gentile_06.jpg" alt=""></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="content">
+                            <a href="#">
+                                <h2>에덴 02(BR)</h2>
+                                <p>330,000원</p>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-slide new">
+                <h1>신상품</h1>
+            </div>
+            <div class="swiper-slide md">
+                <h1>MD추천상품</h1>
+            </div>
+        </div>
+        <!-- swiper-slide 외에 다른 선택 옵션들은 자식, 자손 작성 금지 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script>
+        const wrapSlide = new Swiper ('#wrap',{
+            direction:'vertical',
+            mousewheel:true,
+            scrollbar:{
+                el:'#wrap > .swiper-scrollbar', //element의 약자, element를 연결할 부분 작성하기, 작성할 때 부모 포함 작성, ★자손 중복 이름 주의
+            },
+        })
+        var adSlide = new Swiper ('.ad_contents',{
+            autoplay: {delay:1000},
+            loop:true,
+            scrollbar:{el:'.ad_contents .swiper-scrollbar'}
+        })
+        var bestSlide = new Swiper ('#product001',{
+            autoplay:{delay:1000},
+            loop:true,
+            navigation:{
+                nextEl:'#best_wrap .best_container .swiper-button-next',
+                prevEl:'#best_wrap .best_container .swiper-button-prev'},
+        })
+        var bestSlide = new Swiper ('#product002',{
+            autoplay:{delay:2000},
+            loop:true,
+        })
+    </script>
+</body>
+</html>
