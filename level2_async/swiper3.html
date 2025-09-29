@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper-3</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        body {padding-bottom:20px;}
+        /* swiper-wrapper, swiper-slide (relative, w100%, h100%) */
+        /* swiper (overflow:hidden) */
+        #gallery_wrap {
+            background:#f5f5f5; padding:50px; position:relative;
+            width:1200px; margin:0 auto;
+        }
+        #gallery_wrap #gallery {
+            width:1000px; height:300px;
+            border:2px solid red;
+        }
+        #gallery_wrap #gallery .swiper-wrapper {}
+        #gallery_wrap #gallery .swiper-wrapper .swiper-slide {}
+        #gallery_wrap #gallery .swiper-wrapper .gall1 {background:pink;}
+        #gallery_wrap #gallery .swiper-wrapper .gall2 {background:skyblue;}
+        #gallery_wrap #gallery .swiper-wrapper .gall3 {background:palegreen;}
+        #gallery_wrap #gallery .swiper-wrapper .gall4 {background:palegoldenrod}
+        #gallery_wrap .swiper-pagination /* absolute */
+        .swiper-pagination-bullet {
+            background:none;
+            font-size:0.875rem;
+            color:blue;
+            opacity:0.5;
+        }
+        .swiper-pagination-bullet-active{
+            transform:scale(1.3);
+        }
+        #gallery_wrap .swiper-button-prev svg {display:none;}
+        #gallery_wrap .swiper-button-prev::after,
+        #gallery_wrap .swiper-button-next::after {
+            content:'';
+            background:url(https://cdn-icons-png.flaticon.com/128/2985/2985162.png) no-repeat left center / 40px auto;
+            width:50px; height:50px;
+            opacity:0.5;
+            display:inline-block;}
+        #gallery_wrap .swiper-button-next::after {transform:scaleX(-1);}
+        #gallery_wrap .swiper-button-next svg {display:none;}
+        #gallery_wrap .swiper-scrollbar {
+            top:45px; bottom:auto; height:2px;
+            width:1000px;
+            left:50%; transform:translateX(-50%);
+            background:lightgreen;}
+        #gallery_wrap .swiper-scrollbar-drag {background:salmon;}
+        /* -----------------------------------------------ad------------------------------ */
+        #ad {}
+        #ad #ad_swiper {width:100%; height:600px; margin-bottom:100px;}
+        #ad #ad_swiper .swiper-wrapper {}
+        #ad #ad_swiper .swiper-wrapper .swiper-slide {}
+        #ad #ad_swiper .swiper-wrapper .ad1 {background:url(./images/diary_tenbyten.jpg) no-repeat left center;}
+        #ad #ad_swiper .swiper-wrapper .ad2 {background:url(./images/odense_tenbyten.jpg) no-repeat left center;}
+        #ad #ad_swiper .swiper-wrapper .ad1 a {}
+        #ad #ad_swiper .swiper-wrapper .ad2 a {}
+        #ad #ad_swiper .swiper-wrapper .swiper-slide a .copy {
+            width:1140px; height:600px; margin:0 auto;
+            display:flex;
+            flex-flow:column nowrap;
+            gap:10px; justify-content:center;
+            position:relative;
+            opacity:0; transform:translateX(100px); /* 초기상태 */
+        }
+        #ad #ad_swiper .swiper-wrapper .swiper-slide-active a .copy {
+            animation: copy_slide 1.5s both;
+        }
+        @keyframes copy_slide {
+            from{opacity:0; transform:translateX(100px);}
+            to{opacity:1; transform:translateX(0);}
+        }
+        #ad #ad_swiper .swiper-wrapper .swiper-slide a .copy .title_copy {
+            font-size:2.5rem; font-weight:600;
+            line-height:1.25; color:#fff;
+        }
+        #ad #ad_swiper .swiper-wrapper .swiper-slide a .copy .contents_copy {
+            font-size:1rem; color:#fff;
+        }
+        #ad #ad_swiper .swiper-wrapper .ad2 a .copy span {
+            position:absolute; left:210px; top:300px;
+            width:max-content;
+            background:#f00; color:#fff; padding:5px 10px; border-radius:20px;}
+        /* --------------------------- option_ad ------------- */
+        #ad_swiper .swiper-pagination {
+            height:8px; position:absolute; bottom:32px;
+        }
+        #ad_swiper .swiper-pagination-bullet {background:#fff; opacity:0.5}
+        #ad_swiper .swiper-pagination-bullet-active {opacity:1;}
+        #ad_swiper .swiper-button-prev {left:60px;}
+        #ad_swiper .swiper-button-next {right:60px;}
+        #ad_swiper .swiper-button-prev svg,
+        #ad_swiper .swiper-button-next svg {color:#fff; opacity:0.5;}
+        /* 애니메이션 (슬라이드 활성화 기준) */
+        /* -------------------tumblbug---------------- */
+        #tumblbug {}
+        #tumblbug #tumblbug_swiper {
+            width:766px; height:280px;
+            border-radius:10px;
+            margin-bottom:50px;
+        }
+        #tumblbug #tumblbug_swiper .swiper-wrapper {}
+        #tumblbug #tumblbug_swiper .swiper-wrapper img {width:100%}
+        /* ----------------tumblbug-options */
+        #tumblbug #tumblbug_swiper .swiper-options {
+            width:130px; height:32px;
+            position:absolute; right:30px; bottom:30px;
+            display:flex; flex-flow:row nowrap; gap:30px;
+            justify-content:center; align-items:center;
+            z-index:60;
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .swiper-pagination {
+            background:rgba(0,0,0,0.4); color:#fff;
+            border-radius:20px;
+            width:50px; height:20px; padding:0 5px;
+            left:-20px; bottom:10px;
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .swiper-pagination-current,
+        #tumblbug #tumblbug_swiper .swiper-options .swiper-pagination-total {
+            color:#fff;
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .button {
+            width:76px; height:32px;
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .button .swiper-button-prev,
+        #tumblbug #tumblbug_swiper .swiper-options .button .swiper-button-next {
+            width:32px; height:32px;
+            padding:8px; border-radius:50px;
+            background:rgba(0,0,0,0.4);
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .button .swiper-button-prev {
+            transform:translateX(42px)
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .button .swiper-button-prev svg,
+        #tumblbug #tumblbug_swiper .swiper-options .button .swiper-button-next svg {
+            color:#fff;
+        }
+        #tumblbug #tumblbug_swiper .swiper-options .swiper-button-next {}
+    </style>
+</head>
+<body>
+    <main id="gallery_wrap">
+        <div class="swiper" id="gallery">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide gall1"><img src="#" alt=""></div>
+                <div class="swiper-slide gall2"><img src="#" alt=""></div>
+                <div class="swiper-slide gall3"><img src="#" alt=""></div>
+                <div class="swiper-slide gall4"><img src="#" alt=""></div>
+            </div>
+            <!-- 옵션 추가 가능 위치 (1) -->
+        </div>
+        <!-- 옵션 추가 가능 위치 (2) swiper 바깥 -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </main>
+    <section id="ad">
+        <div class="swiper" id="ad_swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ad1">
+                    <a href="#">
+                        <div class="copy">
+                            <h2 class="title_copy">감성을 기록하는<br>다락방</h2>
+                            <p class="contents_copy">기록용 다이어리를 찾고 싶은 사람들은 다 모여라!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide ad2">
+                    <a href="#">
+                        <div class="copy">
+                            <h2 class="title_copy">오덴세로 즐기는<br>덕후 라이프</h2>
+                            <span>~30%</span>
+                            <p class="contents_copy">덕질력 만렙 집순이의 오덴세 활용법</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination" id="ad_pagination"></div>
+            <div class="swiper-button-prev" id="ad_button_prev"></div>
+            <div class="swiper-button-next" id="ad_button_next"></div>
+        </div>
+    </section>
+    <section id="tumblbug">
+        <div class="swiper" id="tumblbug_swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ad1"><a href="#"><img src="./images/tumblbug_bnr001.jpg" alt=""></a></div>
+                <div class="swiper-slide ad2"><a href="#"><img src="./images/tumblbug_bnr002.jpg" alt=""></a></div>
+                <div class="swiper-slide ad3"><a href="#"><img src="./images/tumblbug_bnr003.jpg" alt=""></a></div>
+            </div>
+            <div class="swiper-options">
+                <div class="swiper-pagination"></div> <!-- absolute 내장 -->
+                <div class="button">
+                    <div class="swiper-button-prev"></div> <!-- absolute 내장 -->
+                    <div class="swiper-button-next"></div> <!-- absolute 내장 -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        //const 변수명 = new Swiper('별도명',{옵션:값, 옵션:값})
+        //const 변수명 = new Swiper('별도명',{옵션:{옵션:값,},})
+        const gallerySwiper = new Swiper ('#gallery',{
+            /* autoplay:{delay:2000,}, */
+            loop:true,
+            pagination:{
+                el:'#gallery_wrap .swiper-pagination',
+                renderBullet:function(i,cls){
+                    console.log(i,cls)
+                    return `<span class=${cls}>${i+1}</span>`
+                },
+            },
+            navigation:{
+                prevEl:'#gallery_wrap .swiper-button-prev',
+                nextEl:'#gallery_wrap .swiper-button-next',
+            },
+            scrollbar: {
+                el: "#gallery_wrap .swiper-scrollbar",
+                hide: false,
+            },
+        })
+        const adSwiper = new Swiper('#ad_swiper',{
+            autoplay:{delay:3000},
+            loop:true,
+            pagination:{
+                el:'#ad_swiper .swiper-pagination',
+            },
+            navigation:{
+                prevEl:'#ad_swiper .swiper-button-prev',
+                nextEl:'#ad_swiper .swiper-button-next',
+            },
+        })
+        const tumblbugSwiper = new Swiper ('#tumblbug_swiper',{
+            autoplay:{delay:3000},
+            loop:true,
+            pagination:{
+                el:'#tumblbug_swiper .swiper-options .swiper-pagination',
+                type:'fraction'
+            },
+            navigation:{
+                prevEl:'#tumblbug_swiper .swiper-button-prev',
+                nextEl:'#tumblbug_swiper .swiper-button-next',
+            },
+        })
+    </script>
+</body>
+</html>
