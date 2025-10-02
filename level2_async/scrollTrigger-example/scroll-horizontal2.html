@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비체올린 카약 | 가로 스크롤 트리거 활용</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body {overflow-x:hidden;}
+        header {
+            background:#fff;
+            width:100vw; height:100px; gap:100px; padding-left:30px;
+            display:flex; align-items:center;
+            position:fixed; top:0; left:0; z-index:999;
+        }
+        header img {width:120px;}
+        header .menu {
+            width:1500px;
+            display:flex; justify-content:space-around;
+            align-items:center;
+        }
+        header .menu li {
+            font-size:1.2rem;
+        }
+        header .menu li.active {
+        }
+        main .intro {
+            background-image:url(../scroll-horizontal/kayak.jpg);
+            background-size:150%; background-position:center;
+            height:100vh;
+            position:relative;
+            animation: imgmove 6s 1s ease both;
+        }
+        /* 공통 */
+        main h1 {
+            color:#fff;
+            font-size:3rem; font-weight:600; 
+        }
+        main p {
+            padding-top:20px;
+            color:#fff;
+            font-size:1.2rem; line-height: 1.8;
+        }
+        /* 개별 */
+        main .intro .txt {position:absolute; right:40px; bottom:30%; transform:translateY(-30%);
+        text-align:right;
+        opacity:0;
+        animation:opacity 3s 2s ease both;
+        animation:txtmove 3s 2s ease both;
+        }
+        main .wrap {position:relative;}
+        main .wrap .txt {
+            position:absolute; left:40px; bottom:30%; transform:translateY(-30%);
+        }
+        main .wrap .txt p {}
+        main .wrap .txt p span {}
+        main .wrap .container_wrap {width:100vw;}
+        main .wrap .container {display:flex; width:300vw;}
+        main .wrap .container img {width:100vw;}
+        @keyframes imgmove {
+            from {background-position:40%;}
+            to {background-position:70%;}
+        }
+        @keyframes txtmove {
+            from {transform:translateX(300px);}
+            to {transform:translateX(0);}
+        }
+        @keyframes opacity {
+            form {opacity:0;}
+            to {opacity:1;}            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="../scroll-horizontal/Layer1.jpg" alt=""></a>
+        <ul class="menu">
+            <li><a href="#">비체올린</a></li>
+            <li class="active"><a href="#">카약</a></li>
+            <li><a href="#">트라익</a></li>
+            <li><a href="#">공원</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="txt">
+                <h1>자연과 함께하는 힐링카약파크</h1>
+                <p>천혜의 자연숲에 조성된 일천여미터 수로를 따라서 유유자적하게 카약을 타고<br>체험과 여유를 즐기는 숲속에서의 힐링여정</p>
+            </div>
+        </section>
+        <section class="wrap">
+            <div class="txt">
+                <h1>고요한 물 위, 나만의 시간.</h1>
+                <p>자연을 오롯이 느끼는 카약 힐링.</p>
+            </div>
+            <div class="container_wrap">
+                <div class="container">
+                    <img src="../scroll-horizontal/kayak1.jpg" alt="">
+                    <img src="../scroll-horizontal/kayak2.jpg" alt="">
+                    <img src="../scroll-horizontal/kayak3.jpg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+        const container = document.querySelector('.container')
+        const scrollW = container.offsetWidth - window.innerWidth;
+        console.log(container.offsetWidth, scrollW)
+
+        gsap.utils.toArray('.container_wrap').forEach((obj)=>{
+            const kayak = gsap.timeline({
+                scrollTrigger:{
+                    trigger:obj,
+                    start:'center center',
+                    end:()=>"+=" + scrollW,
+                    scrub:true,
+                    pin:true,
+                    anticipatePin:1,
+                },defaults:{ease:'none'},
+            })
+            kayak.fromTo((obj.querySelector('.container')),{
+                    x:0,
+                },{
+                    x:-scrollW
+                })
+        })
+    </script>
+</body>
+</html>
