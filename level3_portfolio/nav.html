@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오-내비게이션 관리</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        header {
+            max-width:1200px; min-width:320px; /* max, min width 설정하기 */
+            height:60px; margin:0 auto;
+            background-color:aquamarine; align-items:center;
+            display:flex; justify-content: space-between;
+            position:relative;
+        }
+        header #pc_nav {
+            position:absolute; left:50%; transform:translateX(-50%)
+        }
+        header #pc_nav .gnb {display:flex; gap:20px;}
+        header #pc_nav .gnb > li {position:relative;}
+        header #pc_nav .gnb > li:hover .lnb {display:flex;}
+        header #pc_nav .gnb > li > .lnb {
+            position:absolute; left:0; top:60px;
+            background:#444;
+            display:flex;
+            display:none; /* sub 숨기기 */
+        }
+        header .right_wrap .right_menu .contact {display:block;}
+        header .right_wrap .m_nav_wrap {display:none;} /* m숨기기 */
+        /* 모바일 꾸미기 */
+        header .right_wrap .m_nav_wrap #m_nav {
+            position:absolute; right:0; top:60px;
+            background:#555;
+        }
+        header .right_wrap .m_nav_wrap #m_nav .gnb {}
+        header .right_wrap .m_nav_wrap #m_nav .gnb .lnb {display:none;}
+        /* 반응형 1024 이하 모바일 모습으로 변하기 */
+        @media screen and (max-width:1024px) {
+            /* pc nav 숨기기, m nav 보이기 */
+            header #pc_nav {display:none;}
+            header .right_wrap .m_nav_wrap {display:block;}
+            header .right_wrap .right_menu .contact {display:none;} /* 기존 contact 숨기기 */
+        }/* 320 ~ 1024 end */
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="#"><img src="#" alt="로고"></a></h1>
+        <nav id="pc_nav"><!-- pc ver -->
+            <ul class="gnb">
+                <li>
+                    <a href="#">About</a>
+                        <ul class="lnb">
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="">
+                                    <em>OUR JOURNEY</em>
+                                    <span class="view_more">VIEW MORE</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="">
+                                    <em>GLOBAL ACTIVATIONS</em>
+                                    <span class="view_more">VIEW MORE</span>
+                                </a>
+                            </li>
+                        </ul>
+                </li>
+                <li><a href="#">Products</a>
+                </li>
+                <li><a href="#">Feed</a></li>
+                <li><a href="#">Find JINRO</a></li>
+                <li><a href="#">Vibe test</a></li>
+            </ul>
+        </nav>
+        <div class="right_wrap">
+            <div class="right_menu">보조메뉴(언어, contact, 로그인, 회원가입, 장바구니 등)
+                <a href="#" class="contact">CONTACT</a>
+            </div>
+            <div class="m_nav_wrap">
+                <button type="button" id="m_nav_link">메뉴열기</button>
+                <nav id="m_nav"><!-- mobile + tablet ver -->
+                    <!-- JS 처리 -->
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script>
+
+        const pcNav = document.querySelector('#pc_nav') //복사할 요소잡기
+        const mNav = document.querySelector('#m_nav') //붙여넣기 할 요소잡기
+        const gnbClone = pcNav.children[0].cloneNode(true) //요소복제 (자식,자손까지 포함하려면 true)
+        console.log(pcNav, gnbClone)
+        mNav.appendChild(gnbClone); //mNav 요소의 마지막 자식 위치에 gnbClone 삽입
+
+        const pcContact = document.querySelector('.right_menu .contact')
+        const contactClone = pcContact.cloneNode(true)
+        console.log(pcContact)
+        mNav.appendChild(contactClone);
+
+        const mNavGnb = document.querySelectorAll('#m_nav .gnb li')
+        console.log(mNavGnb)
+        let gnbBoolean = false;
+        for(let i of mNavGnb){
+            i.addEventListener('click',(e)=>{
+                e.preventDefault();
+                gnbBoolean = !gnbBoolean;
+                console.log(gnbBoolean)
+                if(gnbBoolean == false){
+                    console.log(i.children[0])
+                    i.children[1].style.display = 'none'
+                }else{i.children[1].style.display = 'block'}
+                /* gnbBoolean ?
+                    i.children[0].style.display = 'none' :
+                    i.children[0].style.display = 'block' */
+            })
+        }
+        /* gnb 메뉴 클릭 시 lnb 보이기, 다시 클릭 시 숨기기 */
+    </script>
+
+</body>
+</html>
