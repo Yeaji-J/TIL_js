@@ -15,3 +15,4 @@
 2. php로 불러오고 싶은 HTML만 잘라서(ctrl+x) php에 붙여넣기
 3. php 삽입 위치에 `<?php include "경로" ?>` 작성하기
 4. filezila 웹호스팅 접속 후 (gitHub(x)) php, html등 프로젝트 폴더 업로드하고 결과 확인하기
+* 프로젝트 별로 깃허브 저장소 만들기
